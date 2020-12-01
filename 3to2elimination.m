@@ -6,13 +6,11 @@ verify := procedure(p);
 
 	if p eq 2 then
 
-		Z := FiniteField(p);//
+		Z := FiniteField(p);
 		R0<A,B,xQ,yQ,x1,y1,z1> := PolynomialRing(Z,7);
-		//R1<aq1,aq,a1,a0,r> := PolynomialRing(R0,6);
 		R<x,y> := PolynomialRing(R0,2);
 
 		weier := x^3 + A*x^2 + B - x*y;
-
 
 		// add two points (projective coordinates (x,y,z) = (P[1],P[2],P[3]))
 		add := function(P,Q);
@@ -51,7 +49,7 @@ verify := procedure(p);
 
 	elif p eq 3 then
 
-		Z := FiniteField(p);//
+		Z := FiniteField(p);
 		R0<A,B,xQ,yQ,x1,y1,z1> := PolynomialRing(Z,7);
 		R<x,y> := PolynomialRing(R0,2);
 
@@ -130,10 +128,6 @@ verify := procedure(p);
 		end function;
 
 	end if;
-
-
-
-
 
 
 	// given a polynomial f in R, eliminate all the even powers of y (mod the elliptic curve equation)
@@ -238,7 +232,7 @@ verify := procedure(p);
 	if (p eq 2) or (p eq 3) then
 		"In characteristic", p, "the leading term is", l1;
 	else
-		"In characteristic not 2 nor 3 the two leading terms are", l1, "and", l2;
+		"In characteristic greater than 3 the two leading terms are", l1, "and", l2;
 	end if;
 end procedure;
 
